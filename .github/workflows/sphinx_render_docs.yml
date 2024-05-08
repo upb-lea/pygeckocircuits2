@@ -18,7 +18,7 @@ jobs:
         python --version
         pip install sphinx sphinx_rtd_theme sphinxcontrib-email
         pip install -e .
-        cd docs/source
+        cd docs
         make html
 #    - name: Build HTML
 #      uses: ammaraskar/sphinx-action@master
