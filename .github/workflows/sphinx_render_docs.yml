@@ -18,11 +18,13 @@ jobs:
         python --version
         pip install sphinx sphinx_rtd_theme sphinxcontrib-email
         pip install -e .
-    - name: Build HTML
-      uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/"
-        pre-build-command: "pip install sphinx_rtd_theme sphinxcontrib-email"
+        cd docs/source
+        make html
+#    - name: Build HTML
+#      uses: ammaraskar/sphinx-action@master
+#      with:
+#        docs-folder: "docs/"
+#        pre-build-command: "pip install sphinx_rtd_theme sphinxcontrib-email"
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
