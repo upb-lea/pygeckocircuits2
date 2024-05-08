@@ -17,6 +17,11 @@ Download the compiled gecko-version from `tinix84/gecko <https://github.com/tini
 
 Run the `example file <https://github.com/upb-lea/pygeckocircuits2/blob/main/examples/remote_geckocircuits_example.py>`__ to see the given functions.
 
+Documentation
+---------------------------------------
+
+Find the documentation `here <https://upb-lea.github.io/pygeckocircuits2/intro.html>`__.
+
 
 Troubleshooting
 ---------------------------------------
