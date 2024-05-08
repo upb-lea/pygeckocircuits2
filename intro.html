@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Welcome to PyGeckoCircuits2 &mdash; PyGeckoCircuits2 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=d45e8c67"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to PyGeckoCircuits2’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyGeckoCircuits2
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1 </span>Welcome to PyGeckoCircuits2</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation"><span class="sectnum">1.1 </span>Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage"><span class="sectnum">1.2 </span>Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting"><span class="sectnum">1.3 </span>Troubleshooting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#pygeckocircuits2-class-and-function-documentation"><span class="sectnum">2 </span>PyGeckoCircuits2 class and function documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-geckosimulation-class"><span class="sectnum">2.1 </span>The <code class="docutils literal notranslate"><span class="pre">GeckoSimulation</span></code> class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_component_keys"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_component_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_component_values"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_component_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_global_parameters"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_global_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_scope_data"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_scope_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_sim_time"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_sim_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_switch_keys"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_switch_keys()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.get_values"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.get_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.open_file"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.open_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.run_simulation"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.run_simulation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.save_file"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.save_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.set_component_values"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.set_component_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.set_global_parameters"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.set_global_parameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.set_loss_file"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.set_loss_file()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.set_sim_time"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.set_sim_time()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pygeckocircuits2.GeckoSimulation.set_switch_values"><code class="docutils literal notranslate"><span class="pre">GeckoSimulation.set_switch_values()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyGeckoCircuits2</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="sectnum">1 </span>Welcome to PyGeckoCircuits2</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/intro.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-pygeckocircuits2">
+<h1><span class="sectnum">1 </span>Welcome to PyGeckoCircuits2<a class="headerlink" href="#welcome-to-pygeckocircuits2" title="Link to this heading"></a></h1>
+<p>This repository was inspired by <a class="reference external" href="https://github.com/MauererM/pygeckocircuits">MaurerM/pygeckocircuits</a>, added by certain functions and a pip-installable package.</p>
+<section id="installation">
+<h2><span class="sectnum">1.1 </span>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>Install pygeckocircuits2 directly from pyPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pygeckocircuits2</span>
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2><span class="sectnum">1.2 </span>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p>Download the compiled gecko-version from <a class="reference external" href="https://github.com/tinix84/gecko/releases/tag/v1.1">tinix84/gecko</a>.</p>
+<p>Run the <a class="reference external" href="https://github.com/upb-lea/pygeckocircuits2/blob/main/examples/remote_geckocircuits_example.py">example file</a> to see the given functions.</p>
+</section>
+<section id="troubleshooting">
+<h2><span class="sectnum">1.3 </span>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>As of now, there are issues with OpenJDK 21 (LTS). Please use OpenJDK 17 (LTS) so far. See also <a class="reference external" href="https://github.com/tinix84/gecko/issues/1">this issue</a>.</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+<section id="pygeckocircuits2-class-and-function-documentation">
+<h1><span class="sectnum">2 </span>PyGeckoCircuits2 class and function documentation<a class="headerlink" href="#pygeckocircuits2-class-and-function-documentation" title="Link to this heading"></a></h1>
+<section id="the-geckosimulation-class">
+<h2><span class="sectnum">2.1 </span>The <code class="docutils literal notranslate"><span class="pre">GeckoSimulation</span></code> class<a class="headerlink" href="#the-geckosimulation-class" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pygeckocircuits2.</span></span><span class="sig-name descname"><span class="pre">GeckoSimulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simfilepath</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">geckoport</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">43036</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simtime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simtime_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation" title="Link to this definition"></a></dt>
+<dd><p>A class to control the GeckoCIRCUITS power electronics simulation tool remotely using inbuilt api services via remote connection.</p>
+<p>Please ensure that the remote access of GeckoCIRCUITS is enabled and set to 43036 port.</p>
+<p>This class is based on the work of <a class="reference external" href="https://github.com/MauererM/pygeckocircuits/blob/master/PyGeckoExample.py">https://github.com/MauererM/pygeckocircuits/blob/master/PyGeckoExample.py</a>
+GeckoCIRCUITS: <a class="reference external" href="https://github.com/geckocircuits/GeckoCIRCUITS">https://github.com/geckocircuits/GeckoCIRCUITS</a></p>
+<dl class="simple">
+<dt>Definitions:</dt><dd><ul class="simple">
+<li><p>Parameters are global
+- parameter_key
+- parameter_value</p></li>
+<li><p>Every component (e.g. ‘L.1’) contains
+- a component_key (e.g. ‘L’)
+- a component_value (e.g. 100e-6)</p></li>
+<li><p>a node is a net-node in GeckoCIRCUITS, e.g. you can name a net with a label ‘v_in’</p></li>
+</ul>
+</dd>
+<dt>Method naming:</dt><dd><ul class="simple">
+<li><p>set   : e.g. to set values or parameters</p></li>
+<li><p>get   : e.g: to get keys, values or parameters</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Special-members<span class="colon">:</span></dt>
+<dd class="field-odd"><p>__init__</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_component_keys">
+<span class="sig-name descname"><span class="pre">get_component_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_component_keys" title="Link to this definition"></a></dt>
+<dd><p>Return the string list of all component names.</p>
+<p>This function is typically not used by the user. Helper-method for get_component_values()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component_name</strong> (<em>str</em>) – the name of the component (ex: IGBT.1)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>list of all the accessible component parameter keys</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_component_values">
+<span class="sig-name descname"><span class="pre">get_component_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_component_values" title="Link to this definition"></a></dt>
+<dd><p>Return the values of the component parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>component_name</strong> (<em>str</em>) – the name of the component (ex: IGBT.1)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>values of the component parameters in a dict</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygeckocircuits2</span> <span class="k">as</span> <span class="nn">pgc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko_instance</span> <span class="o">=</span> <span class="n">pgc</span><span class="o">.</span><span class="n">GeckoSimulation</span><span class="p">(</span><span class="s1">&#39;path/to/simfile.ipes&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko_instance</span><span class="o">.</span><span class="n">get_component_values</span><span class="p">(</span><span class="s1">&#39;mosfet.1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>!NOTE!: all designators and indizees must be chosen with capital letters in the .ipes file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_global_parameters">
+<span class="sig-name descname"><span class="pre">get_global_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_global_parameters" title="Link to this definition"></a></dt>
+<dd><p>Get the existing value of the provided global parameter variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>parameters</strong> (<em>List</em><em>[</em><em>str</em><em>] or </em><em>str</em>) – names of the global parameters (excluding $)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict with available parameters</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygeckocircuits2</span> <span class="k">as</span> <span class="nn">pgc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buck_converter</span> <span class="o">=</span> <span class="n">pgc</span><span class="o">.</span><span class="n">GeckoSimulation</span><span class="p">(</span><span class="s1">&#39;path/to/gecko_file.ipes&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">params</span> <span class="o">=</span> <span class="n">buck_converter</span><span class="o">.</span><span class="n">get_global_parameters</span><span class="p">([</span><span class="s1">&#39;V_in&#39;</span><span class="p">,</span> <span class="s1">&#39;f_s&#39;</span><span class="p">,</span> <span class="s1">&#39;duty_cycle&#39;</span><span class="p">,</span> <span class="s1">&#39;V_out&#39;</span><span class="p">,</span> <span class="s1">&#39;L&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_scope_data">
+<span class="sig-name descname"><span class="pre">get_scope_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">node_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_points</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_scope_data" title="Link to this definition"></a></dt>
+<dd><p>Get the data from the scope that has been recorded after the corresponding simulation.</p>
+<p>The data with respect to specified scope nodes are extracted and save to csv file locally.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>node_names</strong> (<em>List</em><em>[</em><em>str</em><em>] or </em><em>str</em>) – the name provided to the scope nodes</p></li>
+<li><p><strong>file_name</strong> (<em>str</em>) – name of the csv file under which the extracted data needed to be exported</p></li>
+<li><p><strong>start_time</strong> (<em>float</em>) – the time from where the data needs to be recorded</p></li>
+<li><p><strong>stop_time</strong> (<em>float</em>) – the time at which the data recording stops</p></li>
+<li><p><strong>skip_points</strong> (<em>int</em>) – the length of points that needs to be skipped (ex: skip_points = 2 means data is recorded after every 2 data points)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_sim_time">
+<span class="sig-name descname"><span class="pre">get_sim_time</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_sim_time" title="Link to this definition"></a></dt>
+<dd><p>Print and return the current step time and simulation time to the console.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>simtime, timestep</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_switch_keys">
+<span class="sig-name descname"><span class="pre">get_switch_keys</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sw_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_switch_keys" title="Link to this definition"></a></dt>
+<dd><p>Configure switch method to set the properties of the selected switch type. This function does _not_ interact with geckoCircuits.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sw_type</strong> (<em>str</em>) – switch type can be either mosfet/igbt/diode</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>characteristics parameter names as list</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygeckocircuits2</span> <span class="k">as</span> <span class="nn">pgc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">buck_converter</span> <span class="o">=</span> <span class="n">pgc</span><span class="o">.</span><span class="n">GeckoSimulation</span><span class="p">(</span><span class="s1">&#39;Example_Gecko.ipes&#39;</span><span class="p">,</span> <span class="n">simtime</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">timestep</span><span class="o">=</span><span class="mf">50e-9</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mosfet_parameter_list</span> <span class="o">=</span> <span class="n">buck_converter</span><span class="o">.</span><span class="n">get_switch_keys</span><span class="p">(</span><span class="s1">&#39;mosfet&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.get_values">
+<span class="sig-name descname"><span class="pre">get_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">operations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range_start_stop</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.get_values" title="Link to this definition"></a></dt>
+<dd><p>Provide the applicable mean, rms, THD, ripple, Max, Min operations on the selected field that is being provided as a node to the scope.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nodes</strong> (<em>name</em><em> of </em><em>the signal that is provided as node to the scope block</em>) – node names located on the scopes</p></li>
+<li><p><strong>operations</strong> (<em>List</em><em> or </em><em>str</em>) – Mean/RMS/THD/Ripple/Max/Min/Shape operations on the selected signals.
+Multiple operations can be provided as a list</p></li>
+<li><p><strong>range_start_stop</strong> (<em>[</em><em>float</em><em>, </em><em>str</em><em>] or </em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em>) – the range of the data that needs to be considered for applying the mentioned
+operations (ex: [10e-3, start] considers data from 0 to 10e-3)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>returns operation specific dict data (ex: operations = [mean, rms] expected returns:
+return_dict =  {‘mean’: {‘signal_1’: mean_signal_1, ‘signal_2’: mean_signal_2},
+‘rms’: {‘signal_1’: rms_signal_1, ‘signal_2’: rms_signal_2}}</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.open_file">
+<span class="sig-name descname"><span class="pre">open_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.open_file" title="Link to this definition"></a></dt>
+<dd><p>Open the file that is provided as attribute value to the class object.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Gecko window loaded with the provided .ipes file</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.run_simulation">
+<span class="sig-name descname"><span class="pre">run_simulation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simtime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simtime_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.run_simulation" title="Link to this definition"></a></dt>
+<dd><p>Run the simulation upon execution with the default time step and simulation time.</p>
+<p>Note that file should have been opened for running the simulation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>timestep</strong> (<em>float</em>) – the dt time step of each simulation</p></li>
+<li><p><strong>simtime</strong> (<em>float</em>) – simulation time, not including the optional pre simulation time</p></li>
+<li><p><strong>timestep_pre</strong> (<em>float</em>) – the dt time step of the pre simulation</p></li>
+<li><p><strong>simtime_pre</strong> (<em>float</em>) – simulation time of the pre simulation</p></li>
+<li><p><strong>save_file</strong> (<em>bool</em>) – True to save the file</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.save_file">
+<span class="sig-name descname"><span class="pre">save_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.save_file" title="Link to this definition"></a></dt>
+<dd><p>Save the current .ipes file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – name of the file that needs to be saved (include the path for saving into different directory)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>opened .ipes file saved under the provided name and directory</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.set_component_values">
+<span class="sig-name descname"><span class="pre">set_component_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.set_component_values" title="Link to this definition"></a></dt>
+<dd><p>Set the values for the configurable parameters of selected component other than switches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component_name</strong> – name of the selected component that needs to be configured</p></li>
+<li><p><strong>component_dict</strong> – the key value pairs that need to be set on the selected component</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>KeyError</strong> – if invalid keys are provided as the component parameters</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygeckocircuits2</span> <span class="k">as</span> <span class="nn">pgc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko</span> <span class="o">=</span> <span class="n">pgc</span><span class="o">.</span><span class="n">GeckoSimulation</span><span class="p">(</span><span class="s1">&#39;path/to/simfile.ipes&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko</span><span class="o">.</span><span class="n">set_component_values</span><span class="p">(</span><span class="s1">&#39;L.1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;iL(0)&#39;</span><span class="p">:</span> <span class="mi">100</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>!NOTE!: all designators and indizees must be chosen with capital letters in the .ipes file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.set_global_parameters">
+<span class="sig-name descname"><span class="pre">set_global_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">params_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">save_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.set_global_parameters" title="Link to this definition"></a></dt>
+<dd><p>Set the values for the declared and defined global parameters specific to the opened .ipes file.</p>
+<p>Note: parameters can have ‘$’ at the beginning or even not</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>params_dict</strong> (<em>Dict</em>) – the name of the global parameters that are in use (works with and without ‘$’)</p></li>
+<li><p><strong>save_file</strong> (<em>bool</em>) – set to true if the current file with modified global parameters need to be saved. Default: False</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><p></p></dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pygeckocircuits2</span> <span class="k">as</span> <span class="nn">pgc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko_instance</span> <span class="o">=</span> <span class="n">pgc</span><span class="o">.</span><span class="n">GeckoSimulation</span><span class="p">(</span><span class="s1">&#39;path/to/simfile.ipes&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">gecko_instance</span><span class="o">.</span><span class="n">set_global_parameters</span><span class="p">({</span><span class="s1">&#39;V_in&#39;</span><span class="p">:</span> <span class="mi">60</span><span class="p">})</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.set_loss_file">
+<span class="sig-name descname"><span class="pre">set_loss_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">component_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">List</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss_file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.set_loss_file" title="Link to this definition"></a></dt>
+<dd><p>Set the total loss file to the selected switch. Location of the SCL files is required for loading them into the switches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>component_names</strong> (<em>str</em><em> or </em><em>list</em>) – name of the selected switch (ex: IGBT.1, MOSFET.1 etc.)</p></li>
+<li><p><strong>loss_file_path</strong> (str (r’C:/<strong>*/*</strong>.scl)) – the path of the .SCL file that needs to be loaded</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.set_sim_time">
+<span class="sig-name descname"><span class="pre">set_sim_time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">simtime</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">simtime_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestep_pre</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.set_sim_time" title="Link to this definition"></a></dt>
+<dd><p>Set the simulation time and the timestep [optional].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>simtime</strong> (<em>float</em>) – simulation time</p></li>
+<li><p><strong>timestep</strong> (<em>float</em>) – simulation time step</p></li>
+<li><p><strong>timestep_pre</strong> (<em>float</em>) – the dt time step of the pre simulation</p></li>
+<li><p><strong>simtime_pre</strong> (<em>float</em>) – simulation time of the pre simulation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pygeckocircuits2.GeckoSimulation.set_switch_values">
+<span class="sig-name descname"><span class="pre">set_switch_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sw_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">component_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">switch_key_value_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pygeckocircuits2.GeckoSimulation.set_switch_values" title="Link to this definition"></a></dt>
+<dd><p>Set the configuration parameters of the selected switch type. Only switch types of mosfet/igbt/diode are allowed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sw_type</strong> (<em>str</em>) – switch type can be either mosfet/igbt/diode</p></li>
+<li><p><strong>component_name</strong> (<em>str</em>) – name of the selected switch (ex: IGBT.1, MOSFET.1 etc.)</p></li>
+<li><p><strong>switch_key_value_dict</strong> (<em>Dict</em>) – the configuration parameter names and their values related to selected
+switch type that needs to be set</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to PyGeckoCircuits2’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, UPB-LEA.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
