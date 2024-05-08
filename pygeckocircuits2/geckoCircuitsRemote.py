@@ -249,8 +249,8 @@ class GeckoSimulation:
         :rtype: None
         
         :Example:
-        >>> import leapythontoolbox as lpt
-        >>> gecko_instance = lpt.GeckoSimulation('path/to/simfile.ipes')
+        >>> import pygeckocircuits2 as pgc
+        >>> gecko_instance = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko_instance.set_global_parameters({'V_in': 60})
 
         """
@@ -276,8 +276,8 @@ class GeckoSimulation:
         :rtype: Dict
         
         :Example:
-        >>> import leapythontoolbox as lpt
-        >>> buck_converter = lpt.GeckoSimulation('path/to/gecko_file.ipes')
+        >>> import pygeckocircuits2 as pgc
+        >>> buck_converter = pgc.GeckoSimulation('path/to/gecko_file.ipes')
         >>> params = buck_converter.get_global_parameters(['V_in', 'f_s', 'duty_cycle', 'V_out', 'L'])
         """
         parameter_list = [parameters] if isinstance(parameters, str) else parameters
@@ -370,8 +370,8 @@ class GeckoSimulation:
         :rtype: Dict
 
         :Example:
-        >>> import leapythontoolbox as lpt
-        >>> gecko_instance = lpt.GeckoSimulation('path/to/simfile.ipes')
+        >>> import pygeckocircuits2 as pgc
+        >>> gecko_instance = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko_instance.get_component_values('mosfet.1')
 
         !NOTE!: all designators and indizees must be chosen with capital letters in the .ipes file
@@ -397,8 +397,8 @@ class GeckoSimulation:
         :raises KeyError: if invalid keys are provided as the component parameters
 
         :Example:
-        >>> import leapythontoolbox as lpt
-        >>> gecko = lpt.GeckoSimulation('path/to/simfile.ipes')
+        >>> import pygeckocircuits2 as pgc
+        >>> gecko = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko.set_component_values('L.1', {'iL(0)': 100})
 
         !NOTE!: all designators and indizees must be chosen with capital letters in the .ipes file
@@ -495,8 +495,8 @@ class GeckoSimulation:
         :rtype: List
 
         :Example:
-        >>> import leapythontoolbox as lpt
-        >>> buck_converter = lpt.GeckoSimulation('Example_Gecko.ipes', simtime=0.05, timestep=50e-9)
+        >>> import pygeckocircuits2 as pgc
+        >>> buck_converter = pgc.GeckoSimulation('Example_Gecko.ipes', simtime=0.05, timestep=50e-9)
         >>> mosfet_parameter_list = buck_converter.get_switch_keys('mosfet')
         """
         switches = {'mosfet': ['rON', 'rOFF', 'ad_uF', 'ad_rON', 'ad_rOFF', 'paralleled'],

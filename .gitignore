@@ -1,3 +1,4 @@
 .idea/
 pygeckocircuits2/__pycache__/
 pygeckocircuits2/config.json
+examples/remote_geckocircuits_example.ipes

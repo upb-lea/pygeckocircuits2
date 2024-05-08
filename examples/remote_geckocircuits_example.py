@@ -1,4 +1,4 @@
-"""Example to show how to control GeckoCirucits from python."""
+"""Example to show how to control GeckoCircuits from python."""
 
 import pygeckocircuits2 as pgc
 
@@ -37,7 +37,7 @@ print("# -----------------------------------")
 print("# working with switches (mosfet, igbt)")
 print("# -----------------------------------")
 
-# read mosfet paramters that can be changed in the next command
+# read mosfet parameters that can be changed in the next command
 mosfet_parameter_list = buck_converter.get_switch_keys('mosfet')
 print(mosfet_parameter_list)
 
