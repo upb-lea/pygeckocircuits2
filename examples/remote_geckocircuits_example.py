@@ -1,7 +1,9 @@
-import leapythontoolbox as lpt
+"""Example to show how to control GeckoCirucits from python."""
+
+import pygeckocircuits2 as pgc
 
 # open a gecko instance
-buck_converter = lpt.GeckoSimulation('remote_geckocircuits_example.ipes', simtime=0.05, timestep=50e-9, simtime_pre=100e-3, timestep_pre=20e-9)
+buck_converter = pgc.GeckoSimulation('remote_geckocircuits_example.ipes', simtime=0.05, timestep=50e-9, simtime_pre=100e-3, timestep_pre=20e-9)
 
 print(buck_converter.get_sim_time())
 

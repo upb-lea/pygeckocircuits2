@@ -1,3 +1,4 @@
+"""Control GeckoCircuits from python."""
 import pathlib
 import os
 import json
@@ -7,6 +8,7 @@ from typing import Union, List, Tuple, Dict, Optional
 class GeckoSimulation:
     """
     A class to control the GeckoCIRCUITS power electronics simulation tool remotely using inbuilt api services via remote connection.
+
     Please ensure that the remote access of GeckoCIRCUITS is enabled and set to 43036 port.
 
     This class is based on the work of https://github.com/MauererM/pygeckocircuits/blob/master/PyGeckoExample.py
@@ -39,23 +41,23 @@ class GeckoSimulation:
     def __init__(self, simfilepath: str, geckoport: int = 43036, timestep: float = None, simtime: float = None, timestep_pre: float = 0, simtime_pre: float = 0,
                  debug: bool = True) -> None:
         """
-         An initialization block which sets up the required java configuration to run the GeckoCIRCUITS on your PC.
-         Java (GeckoCIRCUITS.jar) file located inside the GeckoCIRCUITS directory needs to be provided
-         for remote configuration.
+        Set up the required java configuration to run the GeckoCIRCUITS on your PC.
 
-         :param simfilepath: absolute or relative path to simulation file
-         :type simfilepath: str
-         :param geckoport: Port to connect to GeckoCIRCUITS. Default port is 43036
-         :type geckoport: int
-         :param timestep: simulation fix timestep
-         :type timestep: float
-         :param simtime: total simulation time
-         :type simtime: float
-         :param debug: Debug mode displays extra information
-         :type debug: bool
+        Java (GeckoCIRCUITS.jar) file located inside the GeckoCIRCUITS directory needs to be provided
+        for remote configuration.
 
-         :return: None
-         :rtype: None
+        :param simfilepath: absolute or relative path to simulation file
+        :type simfilepath: str
+        :param geckoport: Port to connect to GeckoCIRCUITS. Default port is 43036
+        :type geckoport: int
+        :param timestep: simulation fix timestep
+        :type timestep: float
+        :param simtime: total simulation time
+        :type simtime: float
+        :param debug: Debug mode displays extra information
+        :type debug: bool
+        :return: None
+        :rtype: None
         """
         # Find out the onelab_path of installed module,
         # or in case of running directly from git, find the onelab_path of git repository
@@ -138,9 +140,7 @@ class GeckoSimulation:
 
     # Shutting down any left instances
     def __del__(self):
-        """
-        A destructor to shut down any instances that are left opened after simulation
-        """
+        """Destructor to shut down any instances that are left opened after simulation."""
         if hasattr(self, 'ginst'):
             print('Shutting down gecko')
             self.ginst.shutdown()
@@ -151,7 +151,7 @@ class GeckoSimulation:
 
     def save_file(self, filename: str) -> None:
         """
-        A method to save the current .ipes file
+        Save the current .ipes file.
 
         :param filename: name of the file that needs to be saved (include the path for saving into different directory)
         :type filename: str
@@ -169,7 +169,7 @@ class GeckoSimulation:
 
     def open_file(self) -> None:
         """
-        Opens the file that is provided as attribute value to the class object
+        Open the file that is provided as attribute value to the class object.
 
         :return: Gecko window loaded with the provided .ipes file
         :rtype: None
@@ -191,9 +191,11 @@ class GeckoSimulation:
                 print('Check the input file path')
                 self.simfilepath = input("Enter the filepath (ex: E:/myfolder/BuckConverter.ipes):")
                 
-    def run_simulation(self, timestep: float = None, simtime: float = None, timestep_pre: float = None, simtime_pre: float = None, save_file: bool = False) -> None:
+    def run_simulation(self, timestep: float = None, simtime: float = None, timestep_pre: float = None,
+                       simtime_pre: float = None, save_file: bool = False) -> None:
         """
-        Runs the simulation upon execution with the default time step and simulation time.
+        Run the simulation upon execution with the default time step and simulation time.
+
         Note that file should have been opened for running the simulation.
 
         :param timestep: the dt time step of each simulation
@@ -233,7 +235,8 @@ class GeckoSimulation:
 
     def set_global_parameters(self, params_dict: Dict, save_file: bool = False) -> None:
         """
-        Sets the values for the declared and defined global parameters specific to the opened .ipes file
+        Set the values for the declared and defined global parameters specific to the opened .ipes file.
+
         Note: parameters can have '$' at the beginning or even not
 
         :param params_dict: the name of the global parameters that are in use (works with and without '$')
@@ -264,7 +267,7 @@ class GeckoSimulation:
 
     def get_global_parameters(self, parameters: Union[List, str]) -> Dict:
         """
-        Gets the existing value of the provided global parameter variables
+        Get the existing value of the provided global parameter variables.
         
         :param parameters: names of the global parameters (excluding $)
         :type parameters: List[str] or str
@@ -292,12 +295,11 @@ class GeckoSimulation:
     
     def get_sim_time(self) -> Tuple:
         """
-        Prints and returns the current step time and simulation time to the console
+        Print and return the current step time and simulation time to the console.
 
         :return: simtime, timestep
         :rtype: Tuple
         """
-
         simtime = self.ginst.get_Tend()
         timestep = self.ginst.get_dt()
         simtime_pre = self.ginst.get_Tend_pre()
@@ -312,7 +314,7 @@ class GeckoSimulation:
 
     def set_sim_time(self, simtime: float, timestep: float = None, simtime_pre: float = None, timestep_pre: float = None) -> None:
         """
-        Sets the simulation time and the timestep [optional]
+        Set the simulation time and the timestep [optional].
 
         :param simtime: simulation time
         :type simtime: float
@@ -338,9 +340,9 @@ class GeckoSimulation:
 
     def get_component_keys(self, component_name: str) -> List:
         """
-        Returns the string list of all component names
-        This function is typically not used by the user
-        Helper-method for get_component_values()
+        Return the string list of all component names.
+
+        This function is typically not used by the user. Helper-method for get_component_values()
 
         :param component_name: the name of the component (ex: IGBT.1)
         :type component_name: str
@@ -359,7 +361,8 @@ class GeckoSimulation:
 
     def get_component_values(self, component_name: str) -> Dict:
         """
-        Returns the values of the component parameters
+        Return the values of the component parameters.
+
         :param component_name: the name of the component (ex: IGBT.1)
         :type component_name: str
 
@@ -383,7 +386,7 @@ class GeckoSimulation:
     
     def set_component_values(self, component_name: str, component_dict: Dict) -> None:
         """
-        Sets the values for the configurable parameters of selected component other than switches
+        Set the values for the configurable parameters of selected component other than switches.
 
         :param component_name: name of the selected component that needs to be configured
         :param component_dict: the key value pairs that need to be set on the selected component
@@ -418,16 +421,13 @@ class GeckoSimulation:
         else:
             msg = 'Invalid keys provided for the selected component'
             raise KeyError(msg)
-        
 
     # -----------------------------------
     # working with switches (mosfet, igbt)
     # -----------------------------------
-
     def set_switch_values(self, sw_type: str, component_name: str, switch_key_value_dict: dict) -> None:
         """
-        A method to set the configuration parameters of the selected switch type. 
-            Only switch types of mosfet/igbt/diode are allowed
+        Set the configuration parameters of the selected switch type. Only switch types of mosfet/igbt/diode are allowed.
 
         :param sw_type: switch type can be either mosfet/igbt/diode
         :type sw_type: str
@@ -456,7 +456,7 @@ class GeckoSimulation:
 
     def set_loss_file(self, component_names: Union[str, List], loss_file_path: str) -> None:
         """
-        Sets the total loss file to the selected switch. Location of the SCL files is required for loading them into the switches
+        Set the total loss file to the selected switch. Location of the SCL files is required for loading them into the switches.
 
         :param component_names: name of the selected switch (ex: IGBT.1, MOSFET.1 etc.)
         :type component_names: str or list
@@ -486,8 +486,7 @@ class GeckoSimulation:
 
     def get_switch_keys(self, sw_type: str) -> List:
         """
-        A helper function to configure switch method to set the properties of the selected switch type
-        This function does _not_ interact with geckoCircuits!
+        Configure switch method to set the properties of the selected switch type. This function does _not_ interact with geckoCircuits.
 
         :param sw_type: switch type can be either mosfet/igbt/diode
         :type sw_type: str
@@ -501,8 +500,8 @@ class GeckoSimulation:
         >>> mosfet_parameter_list = buck_converter.get_switch_keys('mosfet')
         """
         switches = {'mosfet': ['rON', 'rOFF', 'ad_uF', 'ad_rON', 'ad_rOFF', 'paralleled'],
-             'igbt': ['uF', 'rON', 'rOFF', 'paralleled'],
-             'diode': ['uF', 'rON', 'rOFF', 'paralleled']}
+                    'igbt': ['uF', 'rON', 'rOFF', 'paralleled'],
+                    'diode': ['uF', 'rON', 'rOFF', 'paralleled']}
         read_keys = switches.get(sw_type.lower())
         if self.debug:
             print(f"{sw_type} parameters: {read_keys}")
@@ -513,9 +512,10 @@ class GeckoSimulation:
     # -----------------------------------
 
     def get_scope_data(self, node_names: Union[List, str], file_name: str, start_time: float = None,
-                     stop_time: float = None, skip_points: int = 0) -> None:
+                       stop_time: float = None, skip_points: int = 0) -> None:
         """
-        Gets the data from the scope that has been recorded after the corresponding simulation.
+        Get the data from the scope that has been recorded after the corresponding simulation.
+
         The data with respect to specified scope nodes are extracted and save to csv file locally.
 
         :param node_names: the name provided to the scope nodes
@@ -551,12 +551,11 @@ class GeckoSimulation:
     def get_values(self, nodes: Union[List, str], operations: Union[List, str],
                    range_start_stop: List[Union[float, str]] = None) -> Dict:
         """
-        Provides the applicable mean, rms, THD, ripple, Max, Min operations on the selected field that is being
-        provided as a node to the scope
+        Provide the applicable mean, rms, THD, ripple, Max, Min operations on the selected field that is being provided as a node to the scope.
 
         :param nodes: node names located on the scopes
         :type nodes: name of the signal that is provided as node to the scope block
-        :param operations: Mean\RMS\THD\Ripple\Max\Min\Shape operations on the selected signals. 
+        :param operations: Mean/RMS/THD/Ripple/Max/Min/Shape operations on the selected signals.
             Multiple operations can be provided as a list
         :type operations: List or str
         :param range_start_stop: the range of the data that needs to be considered for applying the mentioned 
@@ -578,7 +577,9 @@ class GeckoSimulation:
         range_start_stop = [data_start_time, data_end_time] if range_start_stop is None else range_start_stop
         try:
             if len(range_start_stop) > 2 or isinstance(range_start_stop[0], str) or abs(range_start_stop[0]) > data_end_time:
-                msg = f'Sim duration: {data_start_time} to {data_end_time}\n range formats: [start_time, end_time]\n range_start_stop: [+time, \'start\'], \n range_start_stop: [-time, \'end\']'
+                msg = (f'Simulation duration: {data_start_time} to {data_end_time}\n '
+                       f'range formats: [start_time, end_time]\n range_start_stop: [+time, \'start\'], \n '
+                       f'range_start_stop: [-time, \'end\']')
                 raise Exception(msg)
             if isinstance(range_start_stop[1], str):
                 if range_start_stop[1] == 'end':
@@ -594,7 +595,8 @@ class GeckoSimulation:
                 start = range_start_stop[0]
                 end = range_start_stop[1]
                 if start < data_start_time or start > end or start == end or end < data_start_time:
-                    msg = f'start ({start}) should be between start_time ({data_start_time}) and end_time ({data_end_time}) and both > start_time ({data_start_time})'
+                    msg = (f'start ({start}) should be between start_time ({data_start_time}) and end_time ({data_end_time}). '
+                           f'And both > start_time ({data_start_time})')
                     raise Exception(msg)
         except Exception as e:
             print('Recheck the range format or time length')
@@ -620,7 +622,7 @@ class GeckoSimulation:
                         pass
         except KeyError as e:
             msg = 'Invalid operator: '+e.args[0]
-            raise Exception(msg)
+            raise Exception(msg) from e
         else:
             return data
 
