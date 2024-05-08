@@ -24,8 +24,8 @@ class GeckoSimulation:
      * a node is a net-node in GeckoCIRCUITS, e.g. you can name a net with a label 'v_in'
        
     Method naming:
-     * set_   : e.g. to set values or parameters
-     * get_   : e.g: to get keys, values or parameters
+     * set   : e.g. to set values or parameters
+     * get   : e.g: to get keys, values or parameters
     """
 
     timestep: float
@@ -249,6 +249,7 @@ class GeckoSimulation:
         :rtype: None
         
         :Example:
+
         >>> import pygeckocircuits2 as pgc
         >>> gecko_instance = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko_instance.set_global_parameters({'V_in': 60})
@@ -276,6 +277,7 @@ class GeckoSimulation:
         :rtype: Dict
         
         :Example:
+
         >>> import pygeckocircuits2 as pgc
         >>> buck_converter = pgc.GeckoSimulation('path/to/gecko_file.ipes')
         >>> params = buck_converter.get_global_parameters(['V_in', 'f_s', 'duty_cycle', 'V_out', 'L'])
@@ -370,6 +372,7 @@ class GeckoSimulation:
         :rtype: Dict
 
         :Example:
+
         >>> import pygeckocircuits2 as pgc
         >>> gecko_instance = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko_instance.get_component_values('mosfet.1')
@@ -397,6 +400,7 @@ class GeckoSimulation:
         :raises KeyError: if invalid keys are provided as the component parameters
 
         :Example:
+
         >>> import pygeckocircuits2 as pgc
         >>> gecko = pgc.GeckoSimulation('path/to/simfile.ipes')
         >>> gecko.set_component_values('L.1', {'iL(0)': 100})
@@ -495,6 +499,7 @@ class GeckoSimulation:
         :rtype: List
 
         :Example:
+
         >>> import pygeckocircuits2 as pgc
         >>> buck_converter = pgc.GeckoSimulation('Example_Gecko.ipes', simtime=0.05, timestep=50e-9)
         >>> mosfet_parameter_list = buck_converter.get_switch_keys('mosfet')
