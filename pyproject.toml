@@ -5,7 +5,7 @@ authors = [
     { name = "UPB-LEA" },
 ]
 description = "Control GeckoCircuits by using python."
-readme = "README.md"
+readme = "README.rst"
 requires-python = "~=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
