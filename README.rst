@@ -2,6 +2,12 @@ Welcome to PyGeckoCircuits2
 ==================================================
 This repository was inspired by `MaurerM/pygeckocircuits <https://github.com/MauererM/pygeckocircuits>`__, added by certain functions and a pip-installable package.
 
+Control a GeckoCircuits simulation by Python code.
+
+
+.. image:: docs/source/figures/pygeckocircuits2.png
+
+
 Installation
 ---------------------------------------
 Install pygeckocircuits2 directly from pyPI:
