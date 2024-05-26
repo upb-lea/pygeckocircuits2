@@ -31,4 +31,4 @@ Find the documentation `here <https://upb-lea.github.io/pygeckocircuits2/intro.h
 
 Troubleshooting
 ---------------------------------------
- * As of now, there are issues with OpenJDK 21 (LTS). Please use OpenJDK 17 (LTS) so far. See also `this issue <https://github.com/tinix84/gecko/issues/1>`__.
+* As of now, there are issues with OpenJDK 21 (LTS). Please use OpenJDK 17 (LTS) so far. See also `this issue <https://github.com/tinix84/gecko/issues/1>`__.
