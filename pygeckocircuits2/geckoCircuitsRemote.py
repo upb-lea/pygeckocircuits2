@@ -188,8 +188,8 @@ class GeckoSimulation:
                 self.ginst.openFile(file_name)
             else:
                 self.simfilepath = None
-                print('Check the input file path')
-                self.simfilepath = input("Enter the filepath (ex: E:/myfolder/BuckConverter.ipes):")
+                print('GeckoCIRCUITS file (.ipes) to simulate not found. Check the file path.')
+                self.simfilepath = input("Enter the file path (e.g.: ~/myfolder/BuckConverter.ipes):")
                 
     def run_simulation(self, timestep: float = None, simtime: float = None, timestep_pre: float = None,
                        simtime_pre: float = None, save_file: bool = False) -> None:
