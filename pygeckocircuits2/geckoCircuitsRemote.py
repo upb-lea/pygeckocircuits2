@@ -488,6 +488,36 @@ class GeckoSimulation:
             msg = 'Not all provided component names exists!'
             raise Exception(msg)
 
+    def set_nonlinear_file(self, capacitor_names: Union[str, List], loss_file_path: str) -> None:
+        """
+        Set the nonlinear loss file to the selected capacitor. Location of the NLC files is required for loading them into the capacitances.
+
+        :param capacitor_names: name of the selected capacitor (ex: C.1, C.2 etc.)
+        :type capacitor_names: str or list
+        :param loss_file_path: the path of the .nlc file that needs to be loaded
+        :type loss_file_path: str (r'C:/***/***.nlc)
+
+        :return: None
+        :rtype: None
+        """
+        if '\\' in loss_file_path:
+            msg = "Use '/' instead of '\\'!"
+            raise Exception(msg)
+        # bring a relative path to an absolute path if path is relative
+        loss_file_path = os.path.abspath(loss_file_path)
+
+        if os.path.exists(loss_file_path) is False:
+            raise Exception(f'Loss file path "{loss_file_path}" does not exist!')
+
+        capacitor_names = [capacitor_names] if isinstance(capacitor_names, str) else capacitor_names
+        available_capacitors = self.ginst.getCapacitors()
+        if set(capacitor_names).issubset(available_capacitors):
+            for name in capacitor_names:
+                self.ginst.doOperation(name, "setNonLinear", loss_file_path)
+        else:
+            msg = f'{capacitor_names} not all part of {available_capacitors}!'
+            raise Exception(msg)
+
     def get_switch_keys(self, sw_type: str) -> List:
         """
         Configure switch method to set the properties of the selected switch type. This function does _not_ interact with geckoCircuits.
