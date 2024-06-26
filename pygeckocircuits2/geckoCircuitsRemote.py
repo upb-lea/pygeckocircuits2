@@ -557,9 +557,9 @@ class GeckoSimulation:
         :type node_names: List[str] or str
         :param file_name: name of the csv file under which the extracted data needed to be exported
         :type file_name: str
-        :param start_time: the time from where the data needs to be recorded
+        :param start_time: the time from where the data needs to be recorded. Defaults to 0 s.
         :type start_time: float
-        :param stop_time: the time at which the data recording stops
+        :param stop_time: the time at which the data recording stops. Defaults to end of simulation time.
         :type stop_time: float
         :param skip_points: the length of points that needs to be skipped (ex: skip_points = 2 means data is recorded after every 2 data points)
         :type skip_points: int
