@@ -553,7 +553,7 @@ class GeckoSimulation:
 
         The data with respect to specified scope nodes are extracted and save to csv file locally.
 
-        :param node_names: the name provided to the scope nodes
+        :param node_names: the name provided to the scope nodes, e.g. ["v1", "i_l_1"]
         :type node_names: List[str] or str
         :param file_name: name of the csv file under which the extracted data needed to be exported
         :type file_name: str
@@ -568,7 +568,9 @@ class GeckoSimulation:
         :rtype: None
         """
         stop_time = stop_time if stop_time and stop_time > 0 else self.ginst.get_Tend()
+        stop_time = stop_time + self.ginst.get_Tend_pre() - 2 * self.ginst.get_dt()
         start_time = start_time if start_time and start_time < stop_time else 0
+        start_time = start_time + self.ginst.get_Tend_pre()
         data = {}
         if isinstance(node_names, list):
             for node in node_names:
@@ -581,7 +583,10 @@ class GeckoSimulation:
             df.insert(0, 'time', time)
             df.to_csv(path_or_buf=file_name+'.csv', encoding='utf-8', index=False, sep=' ', header=True)
         else:
+            df = None
             print('Nothing to be saved')
+
+        return df
 
     def get_values(self, nodes: Union[List, str], operations: Union[List, str],
                    range_start_stop: List[Union[float, str]] = None) -> Dict:
