@@ -5,3 +5,5 @@ examples/remote_geckocircuits_example.ipes
 docs/build/
 dist/
 gpgit/
+*.csv
+*.txt
