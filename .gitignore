@@ -7,3 +7,4 @@ dist/
 gpgit/
 *.csv
 *.txt
+*.log

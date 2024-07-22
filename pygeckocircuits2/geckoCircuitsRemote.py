@@ -1,9 +1,17 @@
 """Control GeckoCircuits from python."""
+# python libraries
 import pathlib
 import os
 import json
-import pandas as pd
 from typing import Union, List, Tuple, Dict, Optional
+import logging
+
+# 3rd party libraries
+import pandas as pd
+
+# configure logging for this module, set the default logging level to WARNING.
+logger = logging.getLogger(__name__)
+logging.basicConfig(format='%(levelname)s,%(asctime)s:%(message)s', level=logging.WARNING)  # , filename='example.log')
 
 class GeckoSimulation:
     """
@@ -38,8 +46,8 @@ class GeckoSimulation:
     simfilepath: Optional[str]
     debug: bool
 
-    def __init__(self, simfilepath: str, geckoport: int = 43036, timestep: float = None, simtime: float = None, timestep_pre: float = 0, simtime_pre: float = 0,
-                 debug: bool = True) -> None:
+    def __init__(self, simfilepath: str, geckoport: int = 43036, timestep: float = None, simtime: float = None, timestep_pre: float = 0, simtime_pre: float = 0
+                 ) -> None:
         """
         Set up the required java configuration to run the GeckoCIRCUITS on your PC.
 
@@ -82,7 +90,7 @@ class GeckoSimulation:
                     gecko_path = input("Enter the path to Gecko directory:")
                     if '\\' in gecko_path:
                         path_wrong = True
-                        print("Use '/' instead of '\\'!")
+                        logger.error("Use '/' instead of '\\'!")
                     else:
                         path_wrong = False
                 if gecko_path[-1] != '/':
@@ -98,7 +106,7 @@ class GeckoSimulation:
                                       "Enter path here:")
                     if '\\' in java_path:
                         path_wrong = True
-                        print("Use '/' instead of '\\'!")
+                        logger.error("Use '/' instead of '\\'!")
                     else:
                         path_wrong = False
                 if java_path[-1] != '/':
@@ -124,10 +132,9 @@ class GeckoSimulation:
         self.JString = autoclass('java.lang.String')
         # The class to control GeckoCIRCUITS:
         self.Inst = autoclass('gecko.GeckoRemoteObject')
-        print(self.Inst)
+        logger.info(self.Inst)
         self.geckoport = geckoport
         self.simfilepath = simfilepath
-        self.debug = debug
         self.open_file()
 
         if simtime is None and timestep is None:
@@ -142,7 +149,7 @@ class GeckoSimulation:
     def __del__(self):
         """Destructor to shut down any instances that are left opened after simulation."""
         if hasattr(self, 'ginst'):
-            print('Shutting down gecko')
+            logger.info('Shutting down gecko')
             self.ginst.shutdown()
 
     # -----------------------------------
@@ -165,7 +172,7 @@ class GeckoSimulation:
             else:
                 self.ginst.saveFileAs(filename+'.ipes')
         else:
-            print('No instance is running!')
+            logger.warning('No instance is running!')
 
     def open_file(self) -> None:
         """
@@ -188,7 +195,7 @@ class GeckoSimulation:
                 self.ginst.openFile(file_name)
             else:
                 self.simfilepath = None
-                print('GeckoCIRCUITS file (.ipes) to simulate not found. Check the file path.')
+                logger.error('GeckoCIRCUITS file (.ipes) to simulate not found. Check the file path.')
                 self.simfilepath = input("Enter the file path (e.g.: ~/myfolder/BuckConverter.ipes):")
                 
     def run_simulation(self, timestep: float = None, simtime: float = None, timestep_pre: float = None,
@@ -222,9 +229,8 @@ class GeckoSimulation:
         self.simtime = self.simtime if simtime is None else simtime
         self.ginst.set_dt(self.timestep)  # Simulation time step
         self.ginst.set_Tend(self.simtime)  # Simulation time
-        if self.debug:
-            print(f"Simulation time: {self.simtime} s")
-            print(f"Timestep time: {self.timestep} s")
+        logger.debug(f"Simulation time: {self.simtime} s")
+        logger.debug(f"Timestep time: {self.timestep} s")
         if save_file:
             self.save_file(self.simfilepath)
         self.ginst.runSimulation()
@@ -262,7 +268,7 @@ class GeckoSimulation:
                 elif isinstance(key, str) and isinstance(value, (float, int)) and '$' in key:
                     self.ginst.setGlobalParameterValue(key, value)
             except jnius.JavaException as e:
-                print('Failed!:', e.innermessage)
+                logger.error('Failed!:', e.innermessage)
         if save_file:
             self.save_file(self.simfilepath)
 
@@ -289,10 +295,9 @@ class GeckoSimulation:
             try:
                 parameter_value = self.ginst.getGlobalParameterValue('$'+name)
                 parameter_dict[name] = parameter_value
-                if self.debug:
-                    print(f'{name} = {parameter_value}')
+                logger.debug(f'{name} = {parameter_value}')
             except jnius.JavaException as e:
-                print('Failed!:', e.innermessage)
+                logger.error('Failed!:', e.innermessage)
         return parameter_dict
     
     def get_sim_time(self) -> Tuple:
@@ -306,11 +311,11 @@ class GeckoSimulation:
         timestep = self.ginst.get_dt()
         simtime_pre = self.ginst.get_Tend_pre()
         timestep_pre = self.ginst.get_dt_pre()
-        if self.debug:
-            print(f"read simtime: {simtime} s")
-            print(f"read timestep: {timestep} s")
-            print(f"read simtime_pre: {simtime_pre} s")
-            print(f"read timestep_pre: {timestep_pre} s")
+
+        logger.debug(f"read simtime: {simtime} s")
+        logger.debug(f"read timestep: {timestep} s")
+        logger.debug(f"read simtime_pre: {simtime_pre} s")
+        logger.debug(f"read timestep_pre: {timestep_pre} s")
 
         return simtime, timestep, simtime_pre, timestep_pre
 
@@ -355,8 +360,8 @@ class GeckoSimulation:
         properties = []
         property_keys = []
         properties = self.ginst.getAccessibleParameters(component_name)
-        if self.debug:
-            print(f'Component {component_name} has parameters: ', properties)
+        # if properties is not None:
+        logger.debug(f'Component {component_name} has parameters: {properties}')
         for param in properties:
             property_keys.append(param.split("\t")[0])
         return property_keys
@@ -383,8 +388,7 @@ class GeckoSimulation:
         values = {}
         for param in component_params:
             values[param] = self.ginst.getParameter(component_name.upper(), param)
-        if self.debug:
-            print(values)
+        logger.debug(values)
         return values
     
     def set_component_values(self, component_name: str, component_dict: Dict) -> None:
@@ -421,7 +425,7 @@ class GeckoSimulation:
             new_pairs = self.get_component_values(component_name.upper())
             for key, value in keys_to_check.items():
                 if new_pairs[key] == value:
-                    print(f'Warning! {key} of {component_name} can be a global parameter as value could not be updated')
+                    logger.error(f'Error! {key} of {component_name} can be a global parameter as value could not be updated')
         else:
             msg = 'Invalid keys provided for the selected component'
             raise KeyError(msg)
@@ -453,10 +457,10 @@ class GeckoSimulation:
                     self.ginst.setParameters(component_name, input_keys, values)
                 else:
                     msg = 'Invalid keys are provided'
-                    print(f'Available settings for {sw_type} :', config_items)
+                    logger.warning(f'Available settings for {sw_type} :', config_items)
                     raise KeyError(msg)
         except jnius.JavaException as e:
-            print('Failed: ', e.innermessage)
+            logger.error('Failed: ', e.innermessage)
 
     def set_loss_file(self, component_names: Union[str, List], loss_file_path: str) -> None:
         """
@@ -538,8 +542,7 @@ class GeckoSimulation:
                     'igbt': ['uF', 'rON', 'rOFF', 'paralleled'],
                     'diode': ['uF', 'rON', 'rOFF', 'paralleled']}
         read_keys = switches.get(sw_type.lower())
-        if self.debug:
-            print(f"{sw_type} parameters: {read_keys}")
+        logger.debug(f"{sw_type} parameters: {read_keys}")
         return read_keys
 
     # -----------------------------------
@@ -547,7 +550,7 @@ class GeckoSimulation:
     # -----------------------------------
 
     def get_scope_data(self, node_names: Union[List, str], file_name: str, start_time: float = None,
-                       stop_time: float = None, skip_points: int = 0) -> None:
+                       stop_time: float = None, skip_points: int = 0) -> pd.DataFrame:
         """
         Get the data from the scope that has been recorded after the corresponding simulation.
 
@@ -583,8 +586,8 @@ class GeckoSimulation:
             df.insert(0, 'time', time)
             df.to_csv(path_or_buf=file_name+'.csv', encoding='utf-8', index=False, sep=' ', header=True)
         else:
-            df = None
-            print('Nothing to be saved')
+            df = pd.DataFrame()
+            logger.warning('No scope data. Nothing to be saved')
 
         return df
 
@@ -639,7 +642,7 @@ class GeckoSimulation:
                            f'And both > start_time ({data_start_time})')
                     raise Exception(msg)
         except Exception as e:
-            print('Recheck the range format or time length')
+            logger.error('Recheck the range format or time length')
             raise
         operators = {'mean': lambda name, s_time, e_time: self.ginst.getSignalAvg(name, s_time, e_time),
                      'rms': lambda name, s_time, e_time: self.ginst.getSignalRMS(name, s_time, e_time),
@@ -655,8 +658,7 @@ class GeckoSimulation:
                 for signal_node in nodes:
                     try:
                         signal_value = operators[operation_key.lower()](signal_node, start, end)
-                        if self.debug:
-                            print(operation_key + ' of ' + signal_node + ':', signal_value)
+                        logger.debug(f"{operation_key} of {signal_node} : {signal_value}")
                         data[operation_key][signal_node] = signal_value
                     except jnius.JavaException:
                         pass
