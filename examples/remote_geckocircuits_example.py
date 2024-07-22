@@ -1,12 +1,12 @@
 """Example to show how to control GeckoCircuits from python."""
 import pygeckocircuits2 as pgc
-import logging
 
 # logging introduction:
 # to see no debug information (quiet program while running), comment this lines
 # if you want to see detailed information about the program messages, set the level to DEBUG.
 # the default logging level is WARNING
 # available logging levels: DEBUG (All details), WARNING, ERROR, CRITICAL (Show only critical errors)
+# import logging
 # logging.basicConfig(format='%(levelname)s,%(asctime)s:%(message)s', encoding='utf-8')
 # logging.getLogger('pygeckocircuits2').setLevel(logging.WARNING)
 
