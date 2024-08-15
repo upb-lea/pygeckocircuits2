@@ -6,9 +6,9 @@ import pygeckocircuits2 as pgc
 # if you want to see detailed information about the program messages, set the level to DEBUG.
 # the default logging level is WARNING
 # available logging levels: DEBUG (All details), WARNING, ERROR, CRITICAL (Show only critical errors)
-# import logging
-# logging.basicConfig(format='%(levelname)s,%(asctime)s:%(message)s', encoding='utf-8')
-# logging.getLogger('pygeckocircuits2').setLevel(logging.WARNING)
+import logging
+logging.basicConfig(format='%(levelname)s,%(asctime)s:%(message)s', encoding='utf-8')
+logging.getLogger('pygeckocircuits2').setLevel(logging.DEBUG)
 
 # open a gecko instance
 buck_converter = pgc.GeckoSimulation('remote_geckocircuits_example.ipes', simtime=0.05, timestep=50e-9, simtime_pre=100e-3, timestep_pre=20e-9)

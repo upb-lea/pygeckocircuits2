@@ -163,8 +163,7 @@ class GeckoSimulation:
         :param filename: name of the file that needs to be saved (include the path for saving into different directory)
         :type filename: str
 
-        :return: opened .ipes file saved under the provided name and directory
-
+        Opened .ipes file saved under the provided name and directory.
         """
         if hasattr(self, 'ginst'):
             if filename.endswith('.ipes'):
@@ -178,9 +177,7 @@ class GeckoSimulation:
         """
         Open the file that is provided as attribute value to the class object.
 
-        :return: Gecko window loaded with the provided .ipes file
-        :rtype: None
-
+        Gecko window loaded with the provided .ipes file
         """
         is_invalid_path = True
         while is_invalid_path:
@@ -215,9 +212,6 @@ class GeckoSimulation:
         :type simtime_pre: float
         :param save_file: True to save the file
         :type save_file: bool
-
-        :return: None
-        :rtype: None
         """
         # pre-simulation if defined:
         self.timestep_pre = self.timestep_pre if timestep_pre is None else timestep_pre
@@ -251,9 +245,6 @@ class GeckoSimulation:
         :param save_file: set to true if the current file with modified global parameters need to be saved. Default: False
         :type save_file: bool
 
-        :return: None
-        :rtype: None
-        
         :Example:
 
         >>> import pygeckocircuits2 as pgc
@@ -331,9 +322,6 @@ class GeckoSimulation:
         :type timestep_pre: float
         :param simtime_pre: simulation time of the pre simulation
         :type simtime_pre: float
-        :return: None
-        :rtype: None
-
         """
         self.simtime = simtime
         if timestep is not None:
@@ -397,10 +385,6 @@ class GeckoSimulation:
 
         :param component_name: name of the selected component that needs to be configured
         :param component_dict: the key value pairs that need to be set on the selected component
-
-        :return: None
-        :rtype: None
-
         :raises KeyError: if invalid keys are provided as the component parameters
 
         :Example:
@@ -444,9 +428,6 @@ class GeckoSimulation:
         :param switch_key_value_dict: the configuration parameter names and their values related to selected
             switch type that needs to be set
         :type switch_key_value_dict: Dict
-
-        :return: None
-        :rtype: None
         """
         config_items = self.get_switch_keys(sw_type)
         input_keys = list(switch_key_value_dict.keys())
@@ -470,9 +451,6 @@ class GeckoSimulation:
         :type component_names: str or list
         :param loss_file_path: the path of the .SCL file that needs to be loaded
         :type loss_file_path: str (r'C:/***/***.scl)
-
-        :return: None
-        :rtype: None
         """
         if '\\' in loss_file_path:
             msg = "Use '/' instead of '\\'!"
@@ -500,9 +478,6 @@ class GeckoSimulation:
         :type capacitor_names: str or list
         :param loss_file_path: the path of the .nlc file that needs to be loaded
         :type loss_file_path: str (r'C:/***/***.nlc)
-
-        :return: None
-        :rtype: None
         """
         if '\\' in loss_file_path:
             msg = "Use '/' instead of '\\'!"
